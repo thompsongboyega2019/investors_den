@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Investors Den: Fostering innovation in blockchain technology with research, education, and consultancy services.">
+  <title>Mentorship Program</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo.png">
+  <link rel="manifest" href="assets/images/site.html">
+  <link rel="mask-icon" href="assets/images/safari-pinned-tab.html" color="#5bbad5">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.html">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/slider.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/vendor/icons.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/animation.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/gallery.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/cookie-notice.min.css">
+  <link rel="stylesheet" href="assets/css/default.css">
+  <link rel="stylesheet" href="assets/css/theme-light-green.css">
+
+  <!-- Font Awesome -->
+  <script src="../kit.fontawesome.com/0d83d0ec60.js" crossorigin="anonymous"></script>
+
+  <!-- Inline Styles -->
+  <style>
+    :root {
+      --header-bg-color: #242c44;
+      --nav-item-color: #0ACA17;
+      --top-nav-item-color: #0ACA17;
+      --hero-bg-color: #242c44;
+      --section-1-bg-color: #0ACA17;
+      --section-2-bg-color: #f5f5f5;
+      --section-3-bg-color: #242c44;
+      --section-4-bg-color: #f5f5f5;
+      --section-5-bg-color: #242c44;
+      --section-6-bg-color: #0ACA17;
+      --footer-bg-color: #242c44;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .video-thumbnail {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail img {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .video-thumbnail:hover img {
+      transform: scale(1.05);
+      opacity: 0.7;
+    }
+
+    .fa-play-circle {
+      font-size: 4rem;
+      color: rgba(255, 255, 255, 0.9);
+      transition: color 0.3s ease;
+    }
+
+    .video-thumbnail:hover .fa-play-circle {
+      color: #ffcc00;
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    #video {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%; /* Make buttons take full width of their column */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .svg-icon {
+      width: 20px;  /* Resized to a reasonable size */
+      height: 20px;
+      margin-right: 8px;  /* Space between the logo and text */
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-success {
+      background-color: #28a745;
+      border: none;
+      color: white;
+    }
+
+    .btn-success:hover {
+      background-color: #218838;
+    }
+
+    .col-5 {
+      display: flex;
+      justify-content: center;
+    }
+    a.btn {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .payment-buttons .btn {
+      width: 100%;
+      padding: 15px 25px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background-color: #0ACA17;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-buttons .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      background-color: #09b614;
+    }
+
+    .payment-buttons .svg-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      filter: brightness(0) invert(1);
+    }
+
+    @media (max-width: 768px) {
+      .payment-buttons .btn {
+        margin-bottom: 15px;
+      }
+    }
+
+    .payment-section {
+      padding: 3rem 0;
+      background-color: rgba(255, 255, 255, 0.02);
+      border-radius: 15px;
+    }
+
+    .section-title {
+      color: #fff;
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+
+    .payment-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #0ACA17;
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      height: 100%;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 6px rgba(10, 202, 23, 0.2);
+    }
+
+    .payment-btn:hover {
+      transform: translateY(-3px);
+      background-color: #09b614;
+      box-shadow: 0 6px 12px rgba(10, 202, 23, 0.3);
+      color: white;
+    }
+
+    .payment-btn.crypto {
+      background-color: #2d3748;
+    }
+
+    .payment-btn.crypto:hover {
+      background-color: #1a202c;
+    }
+
+    .payment-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 1rem;
+      filter: brightness(0) invert(1);
+    }
+
+    .payment-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .payment-method {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .payment-section {
+        padding: 2rem 0;
+      }
+
+      .payment-btn {
+        padding: 1.25rem;
+      }
+
+      .payment-method {
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body class="home">
+
+<!-- Header -->
+<header id="header">
+  <!-- Navbar -->
+  <nav data-aos="zoom-out" data-aos-delay="800" class="navbar navbar-expand">
+    <div class="container header">
+      <!-- Navbar Brand -->
+      <a class="navbar-brand" href="index-2.html">
+        <img src="assets/images/logo.png" alt="Investors Den">
+        <span class="brand-text">Investors Den</span>
+      </a>
+
+      <!-- Nav holder -->
+      <div class="ml-auto"></div>
+
+      <!-- Navbar Icons -->
+      <ul class="navbar-nav icons">
+        <li class="nav-item social">
+          <a href="https://www.tiktok.com/@investorsden?_t=8mLOZTyhxIr&amp;_r=1" class="nav-link"><i class="fab fa-tiktok"></i></a>
+        </li>
+        <li class="nav-item social">
+          <a href="https://twitter.com/investorsden_" class="nav-link"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="nav-item social">
+          <a href="https://www.instagram.com/the_investorsden/profilecard/?igsh=MWtmdHp3bDdkMGI5cw==" class="nav-link"><i class="fab fa-instagram"></i></a>
+        </li>
+      </ul>
+
+      <!-- Navbar Items -->
+      <ul class="navbar-nav items">
+        <li class="nav-item">
+          <a href="index-2.html#pricing" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item">
+          <a href="index-2.html#contact" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Navbar Toggle -->
+      <ul class="navbar-nav toggle">
+        <li class="nav-item">
+          <a href="#" class="nav-link" data-toggle="modal" data-target="#menu">
+            <i class="icon-menu m-0"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<!-- About [video] -->
+<section id="video" class="section-2 highlights image-center">
+  <div class="container smaller">
+    <!-- Introductory Text -->
+    <div class="row text-center intro">
+      <div class="col-12">
+        <h2>Mentorship Program</h2>
+        <p class="text-max-800">
+          This is a comprehensive 1-month online training program focused on cryptocurrency trading, with a special emphasis on technical analysis and advanced investment strategies. The strategies covered in this course are entirely exclusive to this program. This is a comprehensive 1-month online training program focused on cryptocurrency trading, with a special emphasis on technical analysis and advanced investment strategies. The strategies covered in this course are entirely exclusive to this program.
+
+          Participants will have the opportunity to engage directly with their tutor, ask questions, and participate in interactive sessions on a weekly basis. Each session lasts for 2 hours, held every Saturday at 2 PM sharp.
+
+          Enrolling in this program also provides full access to both the beginners and advanced courses, along with all-inclusive packages.
+        </p>
+      </div>
+    </div>
+
+    <!-- Video Gallery -->
+    <div class="row text-center">
+      <div class="col-12 gallery">
+        <a href="https://www.youtube.com/watch?v=F_mPZmWjdis&amp;list=PL997PSQ_D9g75GFuWOswOGc5HsearP4T3&amp;index=1"
+           class="video-thumbnail d-flex justify-content-center align-items-center position-relative">
+          <!-- Font Awesome Play Icon -->
+          <i class="fas fa-play-circle position-absolute"></i>
+          <img src="assets/images/mentorship_program.jpg" class="fit-image rounded" alt="About the Mentorship Program">
+        </a>
+      </div>
+    </div>
+
+    <!-- Payment Buttons with SVG -->
+    <div class="container">
+      <div class="row justify-content-center payment-section">
+        <div class="col-12 text-center">
+          <h4 class="section-title mb-5">Select Payment Method</h4>
+        </div>
+        
+        <!-- Payment Options Container -->
+        <div class="col-12 col-lg-10">
+          <div class="row justify-content-center g-4">
+            <!-- USD Payment -->
+            <div class="col-12 col-md-4">
+              <a href="https://flutterwave.com/pay/g2y7z8ghfrcm" class="payment-btn">
+                <img src="assets/images/flutterwave.svg" alt="Flutterwave" class="payment-icon">
+                <div class="payment-details">
+                  <span class="payment-method">Pay with USD</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Crypto Payment -->
+            <div class="col-12 col-md-4">
+              <a href="https://nowpayments.io/payment/?iid=4855778159" class="payment-btn crypto">
+                <img src="assets/images/Now_logo.svg" alt="Crypto" class="payment-icon">
+                <div class="payment-details">
+                  <span class="payment-method">Pay with Crypto</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- NGN Payment -->
+            <div class="col-12 col-md-4">
+              <a href="https://flutterwave.com/pay/vs7747kky65d" class="payment-btn">
+                <img src="assets/images/flutterwave.svg" alt="Flutterwave" class="payment-icon">
+                <div class="payment-details">
+                  <span class="payment-method">Pay with NGN</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="odd">
+  <!-- Footer [links] -->
+  <section id="footer" class="footer">
+    <div class="container">
+      <div class="row items footer-widget">
+        <div class="col-12 col-lg-3 p-0">
+          <div class="row">
+            <div class="branding col-12 p-3 text-center text-lg-left item">
+              <div class="brand">
+                <a href="index-2.html" class="logo">
+                  <img src="assets/images/logo.png" alt="Investors Den">
+                </a>
+              </div>
+              <p>Making Crypto<br>Easy</p>
+              <ul class="navbar-nav social share-list mt-0 ml-auto">
+                <li class="nav-item">
+                  <a href="https://www.instagram.com/theinvestorsdenacademy/?igshid=Mzc1MmZhNjY%3D" class="nav-link"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://web.facebook.com/thedencommunity?mibextid=LQQJ4d&amp;_rdc=1&amp;_rdr" class="nav-link"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.youtube.com/channel/UCDSBaxidyx_ZnWJdwp8x_Qw" class="nav-link"><i class="fab fa-youtube"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://x.com/investorsden_" class="nav-link"><i class="fab fa-twitter"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-9 p-0">
+          <div class="row">
+            <div class="col-12 col-lg-4 p-3 text-center text-lg-left item">
+              <h4 class="title">Get in Touch</h4>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a href="tel:+2347086539305" class="nav-link">
+                    <i class="fas fa-phone"></i>
+                    +234 7086539305 / 8156697122
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="mailto:contact@investorsden.com.ng" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    contact@investorsden.com.ng
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#contact" class="mt-4 btn dark-button smooth-anchor"><i class="far fa-message"></i> SEND A MESSAGE</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-lg-4 p-3 text-center text-lg-left item">
+              <h4 class="title">Our Services</h4>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a href="index-2.html" class="nav-link">Investors Den Academy</a>
+                </li>
+                <li class="nav-item">
+                  <a href="beginners-course.html" class="nav-link">Beginners Course</a>
+                </li>
+                <li class="nav-item">
+                  <a href="advanced-course.html" class="nav-link">Advanced Course</a>
+                </li>
+                <li class="nav-item">
+                  <a href="mentorship-program.html" class="nav-link">Mentorship Program</a>
+                </li>
+                <li class="nav-item">
+                  <a href="exclusive-menbership.html" class="nav-link">Exclusive Membership</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Copyright -->
+  <section id="copyright" class="p-3 copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 p-3 text-center text-lg-left">
+          <p>Empowering Your Cryptocurrency & Blockchain Journey.</p>
+        </div>
+        <div class="col-12 col-md-6 p-3 text-center text-lg-right">
+          <p>© 2024 Investors Den is Proudly Powered by <a href="#" target="_blank">Investors Den</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+
+<!-- Scroll to Top -->
+<div id="scroll-to-top" class="scroll-to-top">
+  <a href="#header" class="smooth-anchor">
+    <i class="icon-arrow-up"></i>
+  </a>
+</div>
+
+<!-- JavaScript Files -->
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/jquery.easing.min.js"></script>
+<script src="assets/js/vendor/jquery.inview.min.js"></script>
+<script src="assets/js/vendor/popper.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/vendor/ponyfill.min.js"></script>
+<script src="assets/js/vendor/slider.min.js"></script>
+<script src="assets/js/vendor/animation.min.js"></script>
+<script src="assets/js/vendor/progress-radial.min.js"></script>
+<script src="assets/js/vendor/bricklayer.min.js"></script>
+<script src="assets/js/vendor/gallery.min.js"></script>
+<script src="assets/js/vendor/shuffle.min.js"></script>
+<script src="assets/js/vendor/cookie-notice.min.html"></script>
+<script src="assets/js/vendor/particles.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!-- Additional Scripts -->
+<script src="../code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="../stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+
+
+</html>

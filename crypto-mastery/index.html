@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Mastery Crash Course</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&amp;display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0f1c; /* Dark blue background */
+            color: #ffffff; /* White text */
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            font-weight: 600;
+            color: #33ff66; /* Bright green highlight */
+        }
+        p, li {
+            font-weight: 300;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #33ff66; /* Bright green button */
+            color: #0a0f1c;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            background-color: #2ad657;
+        }
+        .highlight {
+            color: #33ff66;
+            font-weight: bold;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        .testimonial {
+            background: rgba(51, 255, 102, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .stat-item {
+            margin: 15px;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            color: #33ff66;
+            font-weight: 600;
+        }
+        .risk-warning {
+            font-size: 0.8em;
+            color: #999;
+            margin-top: 40px;
+        }
+        .hero-section {
+            margin: 40px 0;
+        }
+        
+        .about-section {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .steps-section {
+            margin: 40px 0;
+        }
+        
+        .step-card {
+            background: rgba(51, 255, 102, 0.05);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+        
+        .price-section {
+            background: rgba(51, 255, 102, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .emoji {
+            font-size: 1.5em;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .benefits-list li {
+            position: relative;
+            padding: 15px 20px 15px 60px;
+            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            text-align: left;
+            transition: transform 0.2s ease;
+        }
+
+        .benefits-list li:hover {
+            transform: translateX(5px);
+            background: rgba(51, 255, 102, 0.1);
+        }
+
+        .benefits-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 20px;
+            font-size: 1.4rem;
+            color: var(--primary-green);
+        }
+
+        @media (max-width: 768px) {
+            .benefits-list li {
+                padding: 12px 15px 12px 50px;
+                font-size: 1rem;
+            }
+            
+            .benefits-list li::before {
+                left: 15px;
+                font-size: 1.2rem;
+            }
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            margin: 30px 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .challenge-text {
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            position: relative;
+            background: linear-gradient(145deg, #0c1220, #0a0f1c);
+            margin: 15% auto;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            border: 1px solid rgba(51, 255, 102, 0.3);
+            box-shadow: 0 0 30px rgba(51, 255, 102, 0.1);
+            animation: modalFade 0.3s ease-in-out;
+        }
+
+        @keyframes modalFade {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-content h2 {
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, #33ff66, #2ad657);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 20px 0;
+        }
+
+        .payment-button {
+            padding: 25px;
+            border: 2px solid rgba(51, 255, 102, 0.2);
+            border-radius: 15px;
+            background: rgba(51, 255, 102, 0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .payment-button:hover {
+            background: rgba(51, 255, 102, 0.1);
+            transform: translateY(-5px);
+            border-color: rgba(51, 255, 102, 0.4);
+            box-shadow: 0 10px 20px rgba(51, 255, 102, 0.1);
+        }
+
+        .payment-button h3 {
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+        }
+
+        .payment-button p {
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--text-light);
+            opacity: 0.7;
+            transition: all 0.2s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 30% auto;
+                padding: 30px;
+            }
+
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-button {
+                padding: 20px;
+            }
+        }
+    </style>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'../../connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1134113568364061');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1134113568364061&amp;ev=PageView&amp;noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QS3C3M74Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5QS3C3M74Z');
+</script>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Crypto Challenge Logo" class="logo">
+        
+        <div class="hero-section">
+            <h1>CRYPTO MASTERY CRASH COURSE</h1>
+            <p>A Beginner’s Guide to <span class="highlight">Crypto Wealth</span> with Nigeria's Leading Expert.</p>
+            <p>Live Virtual Training: May 28th, 2025</p>
+            <p>Format: Virtual & Practical (Live Webinar)</p>
+            <p>Access Fee: ₦10,000</p>
+            <p>Bonus: One month of FREE access to our private community group and a copy of the training recording!</p>
+        </div>
+
+        <div class="about-section">
+            <h2>TRANSFORM YOUR FINANCIAL FUTURE IN ONE INTENSIVE WEBINAR</h2>
+            <p>Crypto isn't just the future. It is also the present. The crypto market has taken the world by storm, and now is the time for you to get in on the action. But without proper guidance, entering this world can feel overwhelming, risky, and confusing.</p>
+<p>That ends now.</p>            
+            <h3 class="highlight">ARE YOU...</h3>
+            <p>1. Confused by complex charts and technical jargon?</p>
+            <p>2. Worried about scams and making costly mistakes?</p>
+            <p>3. Watching others profit from crypto while you sit on the sidelines?</p>
+            <p class="highlight"><em>It's time to stop pondering and start working for your financial freedom.</em></p>
+        </div>
+        <div class="hero-section">
+            <h1>INTRODUCING THE CRYPTO MASTERY CRASH COURSE</h1>
+            <p>A 3-hour intensive webinar that will transform you from a complete beginner to a confident crypto investor in ONE DAY.</p>
+            <p>The crypto market is booming, but so is the risk of misinformation. Getting the right training is crucial, and this Crash Course will give you a solid foundation to build your investment strategies.</p>
+            <p>Tek is a crypto expert with over 10 years of experience. His real-life experience and expert knowledge have earned him recognition from some of the biggest names in the industry, including the legendary Don Jazzy.</p>
+            <p>By enrolling, you'll get exclusive access to efficient lessons taught by one of the most trusted experts in the crypto space.</p>
+            <div class="video-container">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube-nocookie.com/embed/-3wXWmcCTpI?si=YFZzDzYbVrF2FaJO&amp;start=56" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+            </div>
+        </div>
+
+        <div class="steps-section">
+            <h2>What You'll Learn:</h2>
+            <p>In one intensive session, you’ll learn everything you need to navigate the crypto market.</p>
+            <div class="step-card">
+                <h3>1. Understanding Crypto Investments</h3>
+                <p>What are cryptocurrencies? How do they work? Learn the fundamentals of crypto investing, the potential returns, and risks.</p>
+            </div>
+            <div class="step-card">
+                <h3>2. Technical Analysis</h3>
+                <p>Master the art of reading market trends, price charts, and understanding market behavior. Learn how to predict market movements.</p>
+            </div>
+            <div class="step-card">
+                <h3>3. Profit-Making Strategies</h3>
+                <p>Learn how to spot profitable opportunities and develop strategies that work for YOU in the market.</p>
+            </div>
+            <div class="step-card">
+                <h3>4. Chart Reading</h3>
+                <p>Unlock the mystery of crypto charts. You'll learn how to interpret data points and identify trends to make more informed decisions.</p>
+            </div>
+            <div class="step-card">
+                <h3>5. How to Buy & Store Cryptos Safely</h3>
+                <p>Step-by-step guidance on how to buy your first crypto and how to store it securely in your wallet.</p>
+            </div>
+            <h3>And many more advanced tips, tricks, and strategies that you won’t find anywhere else!</h3>
+        </div>
+
+        <div class="price-section">
+            <h2>THIS IS NOT JUST THEORY</h2>
+            <p>It is a hands-on training session that will impact you with practical knowledge.</p>
+            <p>During this training, you will:</p>
+            <ul class="benefits-list">
+                <li>Set up your first crypto wallet</li>
+                <li>Execute a real transaction</li>
+                <li>Analyze current market conditions</li>
+                <li>Create your personalized investment strategy</li>
+                <li>Learn to spot the next big opportunity before others</li>
+            </ul>
+        </div>
+        <h2>EXCLUSIVE BONUSES FOR EARLY ACTION👍</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <p>ONE MONTH FREE ACCESS to Tek’s Private Telegram Group (valued at 50,000 naira).</p>
+            </div>
+            <div class="feature-card">
+                <p>LIFETIME ACCESS to the complete webinar recording for future reference.</p>
+            </div>
+            <div class="feature-card">
+                <p>STANDBY SUPPORT GROUP to answer any questions you have.
+
+</p>
+            </div>
+        </div>
+        <div class="cta-section">
+            <h2>YOUR INVESTMENT 👇 </h2>
+            <p>Regular Price: <del>15,000 naira</del></p>
+            <p><strong>Only 100 spots left!EARLY BIRD SPECIAL: 10,000 naira (Limited time offer - price increases soon!)</strong></p>
+        </div>
+        <div class="cta-section">
+            <h2>WARNING: SPACE IS LIMITED</h2>
+            <p>To ensure personal attention and maximum value, we're limiting attendance. The last webinar sold out in less than 48 hours.</p>
+<p><strong>SECURE YOUR SPOT</strong></p>
+            <a href="#join" class="cta-button">👉 REGISTER NOW 👈</a>        </div>
+            <div class="price-section">
+            <h2>COMMON QUESTIONS</h2>
+            <p>It is a hands-on training session that will impact you with practical knowledge.</p>
+            <p>During this training, you will:</p>
+            <ul class="benefits-list">
+                <li><strong>I know absolutely nothing about crypto. Is this really for me?</strong>  <br>YES! This course is specifically designed for beginners. Tek will break down all the complex concepts into simple, actionable steps.</li>
+                <li><strong>Is this just going to be theoretical knowledge?</strong> <br>
+                    No. This is hands-on, practical training.
+                </li>
+                <li><strong>What if I can't attend the live session?</strong> <br>While live participation offers the best experience, you'll receive the complete recording to study at your own pace.</li>
+                <li><strong>How is this different from free YouTube tutorials?</strong> <br> Free content is fragmented and often outdated. This boot camp provides a complete, structured system with Tekeme's latest strategies and personal guidance.</li>
+                <li><strong>Is cryptocurrency investing risky?</strong> <br>
+                    All investing carries risk, but the greatest risk is a lack of knowledge. Tekeme will teach you how to identify and manage risks effectively.
+                </li>
+            </ul>
+        </div>
+
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <h3>DON'T MISS THIS OPPORTUNITY</h3>
+                <p>The crypto market waits for no one. While you're deciding, others are already positioning themselves for the next bull run.</p>
+                <a href="#join" class="cta-button">👉 REGISTER NOW 👈</a>
+            </div>
+        </div>
+
+        
+
+        <p class="risk-warning">
+            Risk Warning: Cryptocurrency trading carries significant risk. Past performance does not guarantee future results. 
+            Only trade with money you can afford to lose. This is not financial advice.
+        </p>
+        
+        <div class="footer">
+            <p>2025 Investors Den. All rights reserved.</p>
+            <p>Privacy Policy | Terms of Service</p>
+        </div>
+    </div>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Choose Payment Option</h2>
+            <div class="payment-options">
+                <a href="https://flutterwave.com/pay/10k-challenge-usd" class="payment-button">
+                    <h3>Pay with USD</h3>
+                </a>
+                <a href="https://flutterwave.com/pay/10k-challenge-ngn" class="payment-button">
+                    <h3>Pay with NGN</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href="#join"]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('paymentModal').style.display = 'block';
+            });
+        });
+ 
+        document.querySelector('.close-modal').addEventListener('click', () => {
+            document.getElementById('paymentModal').style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target == document.getElementById('paymentModal')) {
+                document.getElementById('paymentModal').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
